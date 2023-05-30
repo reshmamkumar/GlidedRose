@@ -1,4 +1,5 @@
 # How to run the project?
+-------------------------
 1. Clone/download the project from Github repository.
 2. Set GlidedRose.Console as start up project and start running the applciation.
 3. New items can be added in Assets/items.json for the app to read.
