@@ -7,7 +7,7 @@
 
 2. Define unit tests cases
  - Created unit tests for all given business scenarios.
- - Refactor to avoid repeated item creation in the same class.
+ - Refactor a bit to create a method for avoiding repeated item creation in the same class.
  
 3. Refactor Business Logic. 
  - Move model classes & business logic to separate folders
@@ -16,4 +16,4 @@
 
 4. Added logic to support conjured items.
  - Modify existing business logic to add conjured items.
- - Create unit tests for conjured items.
+ - Create unit tests to cover conjured items.
