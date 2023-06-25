@@ -27,11 +27,11 @@ IHostBuilder CreateHostBuilder(string[] strings)
         .ConfigureServices((_, services) =>
         {
             services.AddSingleton<IUpdateItemPolicy, UpdateItemPolicy>();
-            services.AddSingleton<IStockItemUpdatePolicy, AgedBrieUpdatePolicy>();
-            services.AddSingleton<IStockItemUpdatePolicy, BackStagePassesUpdatePolicy>();
-            services.AddSingleton<IStockItemUpdatePolicy, ConjuredUpdatePolicy>();
-            services.AddSingleton<IStockItemUpdatePolicy, StandardItemsUpdatePolicy>();
-            services.AddSingleton<IStockItemUpdatePolicy, SulurasUpdatePolicy>();
+            services.AddTransient<IStockItemUpdatePolicy, AgedBrieUpdatePolicy>();
+            services.AddTransient<IStockItemUpdatePolicy, BackStagePassesUpdatePolicy>();
+            services.AddTransient<IStockItemUpdatePolicy, ConjuredUpdatePolicy>();
+            services.AddTransient<IStockItemUpdatePolicy, StandardItemsUpdatePolicy>();
+            services.AddTransient<IStockItemUpdatePolicy, SulurasUpdatePolicy>();
             services.AddSingleton<App>();
         });
 }
