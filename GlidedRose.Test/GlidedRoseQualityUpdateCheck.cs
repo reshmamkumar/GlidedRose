@@ -1,5 +1,6 @@
-using GlidedRose.BusinessLogic;
-using GlidedRose.Models;
+using GlidedRose.Domain.BusinessLogic.Constants;
+using GlidedRose.Domain.BusinessLogic.Factory;
+using GlidedRose.Domain.Models;
 
 namespace GlidedRose.Test
 {
@@ -8,9 +9,13 @@ namespace GlidedRose.Test
     {
         private Item GenerateItem(string name, int selllIn, int quality)
         {
+            UpdateItemPolicy updateItemPolicy = new UpdateItemPolicy();
             IList<Item> items = new List<Item>() { new Item { Name = name, SellIn = selllIn, Quality = quality } };
-            var app = new GlidedRoseLogic(items);
-            app.UpdateQuality();
+            foreach (var item in items)
+            {
+                var policy = updateItemPolicy.Create(item);
+                policy.UpdateItem(item);
+            }
             return items[0];
         }
 

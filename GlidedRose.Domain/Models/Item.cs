@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GlidedRose.Models
+namespace GlidedRose.Domain.Models
 {
     public class Item
     {

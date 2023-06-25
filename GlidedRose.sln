@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlidedRose.Console", "GlidedRose\GlidedRose.Console.csproj", "{2DF13092-B2D8-4A85-A59D-AA597DAD3C1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlidedRose.Console", "GlidedRose\GlidedRose.Console.csproj", "{2DF13092-B2D8-4A85-A59D-AA597DAD3C1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlidedRose.Test", "GlidedRose.Test\GlidedRose.Test.csproj", "{63406D32-8957-4CD0-8399-CB1CBAE49C4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlidedRose.Test", "GlidedRose.Test\GlidedRose.Test.csproj", "{63406D32-8957-4CD0-8399-CB1CBAE49C4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlidedRose.Domain", "GlidedRose.Domain\GlidedRose.Domain.csproj", "{2B7B34B9-5A0F-4D08-A2FF-EFA02FF09571}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{63406D32-8957-4CD0-8399-CB1CBAE49C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63406D32-8957-4CD0-8399-CB1CBAE49C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63406D32-8957-4CD0-8399-CB1CBAE49C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B7B34B9-5A0F-4D08-A2FF-EFA02FF09571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7B34B9-5A0F-4D08-A2FF-EFA02FF09571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7B34B9-5A0F-4D08-A2FF-EFA02FF09571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7B34B9-5A0F-4D08-A2FF-EFA02FF09571}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

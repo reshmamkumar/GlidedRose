@@ -1,33 +1,37 @@
-﻿using GlidedRose.BusinessLogic;
-using GlidedRose.Models;
-using Newtonsoft.Json;
+﻿using GlidedRose.Domain.BusinessLogic.Factory;
+using GlidedRose.Domain.BusinessLogic.Policies;
+using GlidedRose.Domain.BusinessLogic.Policies.Interface;
+using GlidedRose.Domain.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using static System.Net.Mime.MediaTypeNames;
 
-namespace GlidedRose
+using IHost host = CreateHostBuilder(args).Build();
+using var scope = host.Services.CreateScope();
+
+var services = scope.ServiceProvider;
+
+try
 {
-    internal class ConsumeGlidedRose
-    {
-        static void Main(string[] args)
+    services.GetRequiredService<App>().Run(args);
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+}
+
+IHostBuilder CreateHostBuilder(string[] strings)
+{
+    return Host.CreateDefaultBuilder()
+        .ConfigureServices((_, services) =>
         {
-            Console.WriteLine("OMGHAI!");
-            IList<Item> items = new List<Item>();
-            using (StreamReader r = new StreamReader("assets/items.json"))
-            {
-                string json = r.ReadToEnd();
-                items = JsonConvert.DeserializeObject<IList<Item>>(json);
-            }
-            var app = new GlidedRoseLogic(items);
-            for (var i = 0; i < 31; i++)
-            {
-                Console.WriteLine("-------- day " + i + " --------");
-                Console.WriteLine("name, sellIn, quality");
-                for (var j = 0; j < items.Count; j++)
-                {
-                    System.Console.WriteLine(items[j]);
-                }
-                Console.WriteLine("");
-                app.UpdateQuality();
-                Console.ReadLine();
-            }
-        }
-    }
+            services.AddSingleton<IUpdateItemPolicy, UpdateItemPolicy>();
+            services.AddSingleton<IStockItemUpdatePolicy, AgedBrieUpdatePolicy>();
+            services.AddSingleton<IStockItemUpdatePolicy, BackStagePassesUpdatePolicy>();
+            services.AddSingleton<IStockItemUpdatePolicy, ConjuredUpdatePolicy>();
+            services.AddSingleton<IStockItemUpdatePolicy, StandardItemsUpdatePolicy>();
+            services.AddSingleton<IStockItemUpdatePolicy, SulurasUpdatePolicy>();
+            services.AddSingleton<App>();
+        });
 }

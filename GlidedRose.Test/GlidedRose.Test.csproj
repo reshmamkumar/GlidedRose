@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GlidedRose\GlidedRose.Console.csproj" />
+    <ProjectReference Include="..\GlidedRose.Domain\GlidedRose.Domain.csproj" />
   </ItemGroup>
 
 </Project>
