@@ -8,7 +8,7 @@
 # GlidedRose - Refactoring Steps
 ------------------
 1. Project Set Up
- - Split Project into three ; One console application and another for NUnit test application and third - a class library to define business logic
+ - Split Project into three ; One console application and another for NUnit test application and third - a class library to define business logic. Seperating the business logic creates room for more loosely coupled code and enhance testability
  - Update target framework from .NET Framework 4.0 to .NET 7
  - Update all dependent libraries
 
