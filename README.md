@@ -25,7 +25,7 @@
  - Modify existing business logic to add conjured items.
  - Create unit tests to cover conjured items.
    
-5. Apply SOLID principles
+5. Apply SOLID principles & Strategy pattern
  - Create separate interface for each item, applied strategy behavioural pattern to dynamically choose which items' **UpdateQuality** policy may be selected runtime.
  - Introduced dependency injection using Microsft.Extensions.Dependency injection for the console application to access business logic, following dependency 
    inversion principle.
